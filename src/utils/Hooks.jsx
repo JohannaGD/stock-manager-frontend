@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react'
+import useFetch from 'use-http'
+
+const BACKEND_HOST = 'http://localhost:8080'
 
 export function useItems(triggers = []) {
-
   const [items, setItems] = useState([])
+  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products`)
+
+  async function getData() {
+    const data = await get()
+    if (response.ok) setItems(data)
+  }
 
   useEffect(() => {
-    const data =  require('../data-mocks/Data.json')
-    setItems(data)
+    // const data =  require('../data-mocks/Data.json')
+    getData()
   }
   , triggers)
 
