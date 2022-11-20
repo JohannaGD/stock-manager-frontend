@@ -1,0 +1,25 @@
+.table-filter-container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table-filter-input {
+  flex: 1;
+  height: 20px;
+}
+
+.table-filters-badge {
+  display: inline-block;
+  background-color: #fff1ff;
+  color: #000;
+  padding: 5px 20px;
+  margin: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.table-filters-badge.selected {
+  background-color: #e1bee7;
+}

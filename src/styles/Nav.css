@@ -1,0 +1,11 @@
+.main-nav {
+  padding: 20px 0;
+}
+
+.main-nav-link {
+  padding: 10px;
+  margin-right: 20px;
+  background-color: #b3e5fc;
+  border-radius: 5px;
+  color: #000
+}

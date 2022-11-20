@@ -1,0 +1,27 @@
+.table-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.base-table {
+  margin: 20px;
+  border-collapse: collapse;
+}
+
+.base-table td {
+  text-align: center;
+}
+
+.base-table thead {
+  height: 50px;
+  background-color: #b3e5fc;
+}
+
+.base-table tbody tr:nth-child(even) {
+  background-color: #fff1ff66;
+}
+
+.base-table tbody tr:nth-child(odd) {
+  background-color: #e6ffff66;
+}

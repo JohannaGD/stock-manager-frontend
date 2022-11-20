@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "type": "academico",
+    "name": "Marcador borrable negro",
+    "quantity": 20
+  },
+  {
+    "id": 2,
+    "type": "academico",
+    "name": "Tinta marcador borrable",
+    "quantity": 20
+  },
+  {
+    "id": 3,
+    "type": "academico",
+    "name": "Borrador de tablero",
+    "quantity": 15
+  },
+  {
+    "id": 4,
+    "type": "academico",
+    "name": "Cuaderno cuadriculado 80 hojas",
+    "quantity": 50
+  },
+  {
+    "id": 5,
+    "type": "academico",
+    "name": "Limpiador de Tablero",
+    "quantity": 15
+  },
+  {
+    "id": 6,
+    "type": "oficina",
+    "name": "Resma papel carta",
+    "quantity": 50
+  },
+  {
+    "id": 7,
+    "type": "oficina",
+    "name": "Resma papel oficio",
+    "quantity": 50
+  },
+  {
+    "id": 8,
+    "type": "oficina",
+    "name": "Lapicero Negro",
+    "quantity": 40
+  },
+  {
+    "id": 9,
+    "type": "oficina",
+    "name": "Perforadora",
+    "quantity": 5
+  },
+  {
+    "id": 10,
+    "type": "oficina",
+    "name": "Cosedora",
+    "quantity": 5
+  },
+  {
+    "id": 11,
+    "type": "aseo",
+    "name": "Trapero",
+    "quantity": 20
+  },
+  {
+    "id": 12,
+    "type": "aseo",
+    "name": "Escoba",
+    "quantity": 20
+  },
+  {
+    "id": 13,
+    "type": "aseo",
+    "name": "Recogedor",
+    "quantity": 20
+  },
+  {
+    "id": 14,
+    "type": "aseo",
+    "name": "Detergente en polvo x 5000 gr",
+    "quantity": 15
+  },
+  {
+    "id": 15,
+    "type": "aseo",
+    "name": "Límpido x 3800 ml",
+    "quantity": 10
+  },
+  {
+    "id": 16,
+    "type": "pedagogico",
+    "name": "Cartulina neón verde en medio pliego",
+    "quantity": 10
+  },
+  {
+    "id": 17,
+    "type": "pedagogico",
+    "name": "Cartulina negra en pliego",
+    "quantity": 15
+  },
+  {
+    "id": 18,
+    "type": "pedagogico",
+    "name": "Pegamento liquido x 100 ml",
+    "quantity": 5
+  },
+  {
+    "id": 19,
+    "type": "pedagogico",
+    "name": "Plastilina en barra roja",
+    "quantity": 10
+  },
+  {
+    "id": 20,
+    "type": "pedagogico",
+    "name": "Caja x 6 vinilos surtidos",
+    "quantity": 12
+  }
+]
