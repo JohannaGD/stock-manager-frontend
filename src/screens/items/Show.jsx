@@ -23,7 +23,7 @@ function Show(props) {
         </div>
         <div className="item-details-container-row">
           <h2>Cantidad:</h2>
-          <span>{item.quantity}</span>
+          <span>{item.stock}</span>
         </div>
       </div>
       <div className="item-movements-container">

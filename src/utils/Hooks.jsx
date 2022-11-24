@@ -24,16 +24,20 @@ export function useItems(triggers = []) {
 export function useFilters(items, filters, triggers=[]) {
   const [filteredItems, setFilteredItems] = useState([])
   const {search, itemType} = filters
+  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products/filter?name=${search}&type=${itemType}`)
 
-  useEffect(() => setFilteredItems(items), [items])
+  async function getData() {
+    const data = await get()
+    if (response.ok) setFilteredItems(data)
+  }
 
   useEffect(() => {
-    setFilteredItems(items.filter((item) => {
-      const searchClause = (search === "" || item.name.toLowerCase().includes(search.toLowerCase()))
-      const itemTypeClause = (itemType === "" || item.type === itemType)
+    setFilteredItems(items)
+  },
+  [items])
 
-      return (searchClause && itemTypeClause)
-    }))
+  useEffect(() => {
+    getData()
   }
   , triggers)
 
@@ -42,10 +46,15 @@ export function useFilters(items, filters, triggers=[]) {
 
 export function useItem(id, triggers = []) {
   const [item, setItem] = useState({})
+  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products/${id}`)
+
+  async function getData() {
+    const data = await get()
+    if (response.ok) setItem(data)
+  }
 
   useEffect(() => {
-    const data =  require('../data-mocks/Data.json')
-    setItem(data.find((item) => item.id == id))
+    getData()
   }
   , triggers)
 

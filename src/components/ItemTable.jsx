@@ -9,8 +9,8 @@ function ItemTable(props) {
   const [search, setSearch] = useState("")
   const [itemType, setItemType] = useState("")
 
-  const filteredItems = useItems([])
-  // const filteredItems = useFilters(items, {search, itemType}, [search, itemType])
+  const items = useItems([])
+  const filteredItems = useFilters(items, {search, itemType}, [search, itemType])
 
   return(
     <div className="table-container">
