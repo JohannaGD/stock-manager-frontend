@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useItems } from '../utils/Hooks'
+import useFetch from 'use-http'
+import { useItems, BACKEND_HOST } from '../utils/Hooks'
 
 import '../styles/ItemMovement.css';
 import '../styles/Button.css';
@@ -33,15 +34,35 @@ function ItemMovementForm(props) {
   const [price, setPrice] = useState("")
   const [description, setDescription] = useState("")
   const { movementType } = props
+  const { post, response, loading, error } = useFetch(`${BACKEND_HOST}/stock-manager/movements`)
 
   const items = useItems([])
+
+  async function postData() {
+    const type = movementType == "entry" 
+      ? "ingreso"
+      : movementType == "egress"
+      ? "salida"
+      : ""
+  
+    const data = await post({
+      productId: id,
+      observations: description,
+      type, quantity, price
+    })
+
+    if (response.ok) clearForm()
+  }
 
   function clearForm() {
     setId("")
     setQuantity("")
     setPrice("")
     setDescription("")
-    alert(`(${movementType})Form#Submit!`)
+  }
+
+  function submitForm() {
+    postData()
   }
 
   return(
@@ -65,7 +86,7 @@ function ItemMovementForm(props) {
         <label>Observaciones:</label>
         <textarea name="description" onChange={(e) => setDescription(e.target.value)} value={description} />
       </div>
-      <SubmitAction onSubmit={clearForm} movementType={movementType}/>
+      <SubmitAction onSubmit={submitForm} movementType={movementType}/>
 
     </form>
   )

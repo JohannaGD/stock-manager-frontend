@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import useFetch from 'use-http'
 
-const BACKEND_HOST = 'http://localhost:8080'
+export const BACKEND_HOST = 'http://localhost:8080'
 
 export function useItems(triggers = []) {
   const [items, setItems] = useState([])
-  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products`)
+  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products`, { cachePolicy: 'cache-and-network' })
 
   async function getData() {
     const data = await get()
@@ -24,7 +24,7 @@ export function useItems(triggers = []) {
 export function useFilters(items, filters, triggers=[]) {
   const [filteredItems, setFilteredItems] = useState([])
   const {search, itemType} = filters
-  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products/filter?name=${search}&type=${itemType}`)
+  const { get, response, loading, error } = useFetch(`${BACKEND_HOST}/stock-manager/products/filter?name=${search}&type=${itemType}`, { cachePolicy: 'cache-and-network' })
 
   async function getData() {
     const data = await get()
@@ -46,7 +46,7 @@ export function useFilters(items, filters, triggers=[]) {
 
 export function useItem(id, triggers = []) {
   const [item, setItem] = useState({})
-  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products/${id}`)
+  const { get, response, loading, error  } = useFetch(`${BACKEND_HOST}/stock-manager/products/${id}`, { cachePolicy: 'cache-and-network' })
 
   async function getData() {
     const data = await get()
