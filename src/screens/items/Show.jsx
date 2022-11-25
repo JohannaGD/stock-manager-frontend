@@ -29,7 +29,7 @@ function Show(props) {
         </div>
       </div>
       <div className="item-movements-container">
-        <h2>Movimientos proximamente</h2>
+        <h2>Movimientos</h2>
         <MovementTable productId={productId}/>
       </div>
     </Content>

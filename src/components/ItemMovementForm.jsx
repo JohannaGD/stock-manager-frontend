@@ -68,10 +68,10 @@ function ItemMovementForm(props) {
   return(
     <form className="item-movement-form">
       <div className="item-movement-form-row">
-        <label for="id">Artículo:</label>
+        <label htmlFor="id">Artículo:</label>
         <select name="id" onChange={(e) => setId(e.target.value)}>
           <option value="">Seleccione un Artículo</option>
-          <SelectOptions selected={id} items={items}/>
+          <SelectOptions value={id} items={items}/>
         </select>
       </div>
       <div className="item-movement-form-row">
