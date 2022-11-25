@@ -16,3 +16,13 @@
 .item-movement-action.egress-action {
   background-color: #e1bee7;
 }
+
+.item-movements-container h2 {
+  align-self: center;
+}
+
+.item-movements-container {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+}

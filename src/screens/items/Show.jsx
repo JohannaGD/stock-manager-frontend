@@ -1,13 +1,15 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import Content from '../../components/Content';
+import MovementTable from '../../components/MovementTable';
 import { useItem } from '../../utils/Hooks'
 
 import '../../styles/Item.css';
 
 function Show(props) {
   const params = useParams();
-  const item = useItem(params.id)
+  const productId = params.id
+  const item = useItem(productId)
 
   return(
     <Content>
@@ -28,6 +30,7 @@ function Show(props) {
       </div>
       <div className="item-movements-container">
         <h2>Movimientos proximamente</h2>
+        <MovementTable productId={productId}/>
       </div>
     </Content>
   )
